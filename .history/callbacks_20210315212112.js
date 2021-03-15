@@ -13,16 +13,9 @@ function getPosts() {
     }, 1000)
 }
 
-function createPost(post, callback) {
-    setTimeout(()=>{
-posts.push(post);
-callback();
-//ny callback function, som kallar på getPost efter posts.push post har kört. Den kallas på i createPost() 
-    }, 2000)
+createPost(post) {
+    setTimeout(()=)
 }
 
 
-// getPosts();
-//kalla på getPost i en callback-function
-
-createPost( {title: 'Post three', body: 'this is post three' }, getPosts )
+getPosts()

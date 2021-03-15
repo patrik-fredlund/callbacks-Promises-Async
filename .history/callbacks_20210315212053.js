@@ -1,3 +1,5 @@
+const { createTypeAnnotationBasedOnTypeof } = require("@babel/types");
+
 const posts = [
     {title: 'Post one', body: 'this is post one'},
     {title: 'Post two', body: 'this is post two'}
@@ -13,16 +15,7 @@ function getPosts() {
     }, 1000)
 }
 
-function createPost(post, callback) {
-    setTimeout(()=>{
-posts.push(post);
-callback();
-//ny callback function, som kallar på getPost efter posts.push post har kört. Den kallas på i createPost() 
-    }, 2000)
-}
+createTypeAnnotationBasedOnTypeof()
 
 
-// getPosts();
-//kalla på getPost i en callback-function
-
-createPost( {title: 'Post three', body: 'this is post three' }, getPosts )
+getPosts()
