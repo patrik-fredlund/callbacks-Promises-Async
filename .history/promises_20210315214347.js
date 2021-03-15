@@ -1,3 +1,5 @@
+const { resolvePreset } = require("@babel/core");
+
 const posts = [
     {title: 'Post one', body: 'this is post one'},
     {title: 'Post two', body: 'this is post two'}
@@ -13,17 +15,26 @@ function getPosts() {
     }, 1000)
 }
 
-function createPost(post, callback) {
+function createPost(post) {
+
+return new Promise ((resolve, reject)=>{
+
     setTimeout(()=>{
-posts.push(post);
-callback();
-//ny callback function, som kallar på getPost efter posts.push post har kört. Den kallas i sin tur på i createPost() 
+    posts.push(post);
+
+    const error = false;
+
+    if(!error){
+        resolve();
+    
+    }else {
+        reject('Error: Something went wrong')
+    }
+
+
     }, 2000)
+});
 }
 
-
-// getPosts();
-//kalla på getPost i en callback-function
-
-createPost( {title: 'Post three', body: 'this is post three' }, getPosts )
-//Här ifrån hämtas getPost
+createPost( {title: 'post three', body: 'this is post three'} )
+.th

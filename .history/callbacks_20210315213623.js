@@ -26,4 +26,4 @@ callback();
 //kalla på getPost i en callback-function
 
 createPost( {title: 'Post three', body: 'this is post three' }, getPosts )
-//Här ifrån hämtas getPost
+//Här
